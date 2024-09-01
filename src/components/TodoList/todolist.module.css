@@ -1,0 +1,123 @@
+.outer_list_cont{
+   
+    padding: 2em;
+    /* height: 70%; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-between;
+    h1{
+        font-size: xx-large;
+        font-weight: bolder;
+    }
+    hr{
+        width: 100%;
+    }
+    .inner_list_cont{
+       margin-left: 60px;
+        padding: 1em;
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        height: 100%;
+        grid-gap: 20px;
+        width: 100%;  
+        .box{
+            padding: 1em;
+            border-radius: 8px;
+            height: 45vh;
+            width: 25vw;
+            background-image: linear-gradient(to top, #08814d 0%, #379879 100%);
+            border:2px solid #075a36;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            display: flex;
+            flex-direction: column;
+            align-items:  center;
+            justify-content: space-between;
+            .pin{
+                display: flex;
+              
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 3em;
+                
+                div{
+                    transition: all 0.16s linear;
+                    width: 2em;
+                    height: 2em;
+                    border-radius: 50%;
+                    background-color: rgb(6, 4, 25);
+                    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: rgb(2, 2, 2);
+                        
+                        transform: scale(1.1);
+                    }
+                    img{
+                        position: absolute;
+                        width:2em;
+                        height: 2em;
+                        border-radius: 50%;
+         
+                    }
+                }
+                h3{
+                    font-size: xx-large;
+                 font-style: oblique;
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                }
+            }
+            .btn_div{
+              
+                padding: 1em;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                button{
+                    padding: 0.6em;
+                    border-radius: 6px;
+                    width: 35%;
+                    cursor: pointer;
+                    transition: all 0.16s linear;
+              
+                }
+                .pending{
+                    background-color: rgb(255, 0, 0);
+                        border: 1px solid red;
+                        color: white;
+                    &:hover{
+                        transform: scale(1.1);
+                        color: white;
+                      
+
+                    }
+                }
+                .done{
+                    background-color: rgb(4, 74, 4);
+                    border: 1px solid  rgb(4, 74, 4);
+                    color: white;
+                &:hover{
+                    transform: scale(1.1);
+                    color: white;
+                  
+
+                }
+                }
+                .update{
+                    background-color: yellow;
+                    border: 1px solid yellow;
+                    &:hover{
+                        transform: scale(1.1);
+                        color: rgb(24, 6, 117);
+                     
+
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { TodoForm } from "./components/TodoForm/todo_form";
+import { TodoList } from "./components/TodoList/todolist";
+import { todoStore } from "./store";
+import { Provider } from "react-redux";
+import Modal from "./components/UpdateForm/update";
+import { useState } from "react";
 
 function App() {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [data, setData] = useState({});
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={todoStore}>
+        <TodoForm />
+        <TodoList setData={setData} setModalOpen={setModalOpen} />
+        <Modal
+          data={data}
+          setData={setData}
+          isOpen={isModalOpen}
+          closeModal={setModalOpen}
+        ></Modal>
+      </Provider>
     </div>
   );
 }
